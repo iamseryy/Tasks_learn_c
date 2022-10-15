@@ -13,11 +13,6 @@ if (num > 1)
     evenNumbers = $"Even numbers between 1 and {num}:";
     int count = 2;
 
-    if (num % 2 != 0)
-    {
-            num--;
-    }
-
     while (count <= num)
     {
         evenNumbers = $"{evenNumbers} {count},";
