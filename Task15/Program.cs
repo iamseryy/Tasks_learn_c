@@ -8,9 +8,9 @@
 
 int dayNumber = GetInputNumber();
 
-if (isValid(dayNumber))
+if (IsValid(dayNumber))
 {
-    Console.WriteLine($"\n{dayNumber} -> {(isDayOff(dayNumber) ? "да" : "нет")}");
+    Console.WriteLine($"\n{dayNumber} -> {(IsDayOff(dayNumber) ? "да" : "нет")}");
 }
 
 
@@ -25,7 +25,7 @@ int GetInputNumber()
 }
 
 
-bool isValid(int dayNumberForValidation)
+bool IsValid(int dayNumberForValidation)
 {
     if (dayNumberForValidation < 1 || dayNumberForValidation > 7)
     {
@@ -37,7 +37,7 @@ bool isValid(int dayNumberForValidation)
 }
 
 
-bool isDayOff(int dayNum)
+bool IsDayOff(int dayNum)
 {
     if (dayNum < 6 || dayNum > 7 )
     {
