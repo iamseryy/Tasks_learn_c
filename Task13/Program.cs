@@ -9,7 +9,7 @@
 
 int inputNumber = GetInputNumber();
 
-Console.Write(!ThirdDigitExits(inputNumber) ? $"\n{inputNumber} -> третьей цифры нет\n" : "");
+Console.Write($"\n{inputNumber} -> {(ThirdDigitExits(inputNumber) ? $"{GetThirdDigit(inputNumber)}" : $"третьей цифры нет\n")}");
 
 
 // ************* methods section ***************
@@ -21,21 +21,24 @@ int GetInputNumber()
     return(num);
 }
 
-bool ThirdDigitExits(int number)
+int GetThirdDigit(int number)
 {
     int num = Math.Abs(number);
 
-    if (num > 99)
+    while (num > 999)
     {
-        while (num > 999)
-        {
-            num = num / 10;
-        }
+        num /= 10;
+    }
+    
+    return num % 10;
+}
 
-        Console.WriteLine($"\n{number} -> {num % 10}");
-
-        return true;
+bool ThirdDigitExits(int number)
+{
+    if (Math.Abs(number) <= 99)
+    {
+        return false;
     }
 
-    return false;
+    return true;
 }
