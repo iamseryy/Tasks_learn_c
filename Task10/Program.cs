@@ -21,7 +21,7 @@ int GetInputNumber()
         Console.Write("\nInput a three digit-number or Ctrl+c for exit: ");
         num = Convert.ToInt32(Console.ReadLine());
 
-        if (isValid(num)) 
+        if (IsValid(num)) 
         {
             break;
         }
@@ -31,7 +31,7 @@ int GetInputNumber()
 }
 
 
-bool isValid(int num)
+bool IsValid(int num)
 {
     if(num < 100 || num > 999)
     {
