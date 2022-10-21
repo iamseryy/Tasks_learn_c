@@ -12,11 +12,11 @@ Console.Write($"\nCoordinate plane number: {GetQuarterNum(xCoordinate, yCoordina
 
 
 // ************* methods section ***************
-int GetInputNumber(string inputText)
+int GetInputNumber(string inputText)  
 {
     int num;
 
-    while(true)
+    while(true) 
     {
         Console.Write(inputText);
         num = Convert.ToInt32(Console.ReadLine());
