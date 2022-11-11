@@ -16,9 +16,11 @@ int[] GetRandomArray(int size)
 {
     int[] array = new int[size];
 
+    Random random = new Random();
+
     for(int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(-10000, 10000);
+        array[i] = random.Next(-10000, 10000);
     }
 
     return array;
