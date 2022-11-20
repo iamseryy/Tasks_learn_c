@@ -11,8 +11,8 @@ double k1 = GetInputNumber("\nEnter k1: ", IsValidTerm);
 double b2 = GetInputNumber("\nEnter b2: ", IsValidTerm);
 double k2 = GetInputNumber("\nEnter k2: ", IsValidTerm, k1);
 
-double x = Math.Round(GetCoordinateX(b1, k1, b2, k2), 2);
-double y = Math.Round(GetCoordinateY(b1, k1, x), 2);
+double x = Math.Round(GetCoordinateX(b1, k1, b2, k2), 1);
+double y = Math.Round(GetCoordinateY(b1, k1, x), 1);
 
 Console.Write($"\nb1 = {b1}, k1 = {k1}, b2 = {b2}, k2 = {k2} -> ({x}; {y})");
 
