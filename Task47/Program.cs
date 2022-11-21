@@ -14,7 +14,7 @@ double matrixMin = GetInputNumber("\nEnter matrix min element: ", IsValidItem);
 double matrixMax = GetInputNumber("\nEnter matrix max element: ", IsValidItem, matrixMin);
 
  Console.WriteLine($"\nm = {matrixM}, n = {matrixN}.");
- PrintMatrix(CreateMatrix(matrixM, matrixN, matrixMin, matrixMax));
+ PrintMatrix(CreateMatrix(matrixM, matrixN, matrixMin, matrixMax), 2);
  Console.WriteLine();
 
 // ************* methods section ***************
@@ -36,18 +36,20 @@ double[,] CreateMatrix(int rows, int columns, double min, double max)
 }
 
 
-void PrintMatrix(double[,] matrix)
+void PrintMatrix(double[,] matrix, int round = -1)
 {
-    double item;
-
     for(int i = 0; i < matrix.GetLength(0); i++)
     {
         Console.Write("|");
         
         for(int j = 0; j < matrix.GetLength(1); j++)
         {
-            item = Math.Round(matrix[i, j], 1);
-            Console.Write($"{item, 10}{(j < matrix.GetLength(1) - 1 ? " |" : "")}");   
+            if (round >= 0)
+            {
+                matrix[i, j] = Math.Round(matrix[i, j], round);
+            }
+            
+            Console.Write($"{matrix[i, j], 10}{(j < matrix.GetLength(1) - 1 ? " |" : "")}");   
         }
 
         Console.WriteLine(" |");

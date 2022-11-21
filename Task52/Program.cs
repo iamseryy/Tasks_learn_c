@@ -11,7 +11,7 @@
 
 Random random = new Random();
 
-int[,] randomMatrix = CreateMatrix(random.Next(1, 11), random.Next(1, 11));
+int[,] randomMatrix = CreateMatrix(random.Next(1, 11), random.Next(1, 11), 1, 100);
 Console.WriteLine();
 PrintMatrix(randomMatrix);
 PrintArray(GetColumnAverages(randomMatrix), 1);
@@ -39,7 +39,7 @@ double[] GetColumnAverages(int[,] matrix)
     return columnAverages;
 }
 
-int[,] CreateMatrix(int rows, int columns)
+int[,] CreateMatrix(int rows, int columns, int min, int max)
 {
     int[,] matrix = new int[rows, columns];
     Random random = new Random();
@@ -48,7 +48,7 @@ int[,] CreateMatrix(int rows, int columns)
     {
         for(int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = random.Next(1, 101);
+            matrix[i, j] = random.Next(min, max + 1);
         }
     }
 

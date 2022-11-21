@@ -14,7 +14,7 @@
 
 Random random = new Random();
 
-double[,] randomMatrix = CreateMatrix(random.Next(1, 11), random.Next(1, 11));
+double[,] randomMatrix = CreateMatrix(random.Next(1, 11), random.Next(1, 11), -100, 100, 2);
 Console.WriteLine();
 PrintMatrix(randomMatrix);
 int m = GetInputNumber("\nEnter matrix row position m: ", IsValidNumber);
@@ -26,19 +26,19 @@ Console.WriteLine();
 
 // ************* methods section ***************
 
-bool FindMatrixItem(double[,] matrix, int rowPosition, int columnPosition, out double? matrixItem) 
+bool FindMatrixItem(double[,] matrix, int rowPosition, int columnPosition, out double? item) 
 {
     if(rowPosition - 1 >= matrix.GetLength(0) || columnPosition - 1 >= matrix.GetLength(1))
     {
-        matrixItem = null; 
+        item = null; 
         return(false);
     }
 
-    matrixItem = matrix[rowPosition - 1, columnPosition - 1];
+    item = matrix[rowPosition - 1, columnPosition - 1];
     return true;
 }
 
-double[,] CreateMatrix(int rows, int columns)
+double[,] CreateMatrix(int rows, int columns, double min, double max, int round = -1)
 {
     double[,] matrix = new double[rows, columns];
     Random random = new Random();
@@ -47,7 +47,12 @@ double[,] CreateMatrix(int rows, int columns)
     {
         for(int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = Math.Round(random.NextDouble() * 200 - 100, 1);
+            matrix[i, j] = random.NextDouble() * (max - min) + min;
+            
+            if(round > -1)
+            {
+                 matrix[i, j] = Math.Round(matrix[i, j], round);
+            }
         }
     }
 
