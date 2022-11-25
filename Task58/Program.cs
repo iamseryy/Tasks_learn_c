@@ -16,14 +16,13 @@ Console.WriteLine($"\nMatrix2 row size m: {matrixN1}");
 int matrixN2 = (int) GetInputNumber("\nEnter matrix2 column size n: ", IsValidNumber);
 double[,] randomMatrix2 = CreateMatrix(matrixN1, matrixN2, -100, 100);
 
-Console.WriteLine();
-Console.WriteLine("Matrix1");
+Console.WriteLine("\nMatrix1");
 PrintMatrix(randomMatrix1, 2);
-Console.WriteLine();
-Console.WriteLine("Matrix2");
+
+Console.WriteLine("\nMatrix2");
 PrintMatrix(randomMatrix2, 2);
-Console.WriteLine();
-Console.WriteLine("Matrix1 * Matrix2");
+
+Console.WriteLine("\nMatrix1 * Matrix2");
 PrintMatrix(MultiplyMatrixs(randomMatrix1, randomMatrix2), 2);
 Console.WriteLine();
 

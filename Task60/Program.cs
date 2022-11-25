@@ -12,7 +12,7 @@ int n;
 if((int) (90 / m) == 1)
 {
     n = 1;
-    Console.WriteLine($"3D Array size n: {n}");
+    Console.WriteLine($"\n3D Array size n: {n}");
 }
 else
 {
@@ -24,7 +24,7 @@ int p;
 if((int) (90 / m / n) == 1)
 {
     p = 1;
-    Console.WriteLine($"3D Array size p: {p}");
+    Console.WriteLine($"\n3D Array size p: {p}");
 }
 else
 {
@@ -33,7 +33,7 @@ else
 
 int [,,] randomNumbers = Create3DArray(m, n, p, 10, 99);
 
-Console.WriteLine();
+Console.WriteLine("\nResult:");
 Print3DArray(randomNumbers);
 Console.WriteLine();
 
